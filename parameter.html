@@ -4,13 +4,15 @@
     <meta charset="utf-8" />
     <title>Page Title</title>
     <link rel="stylesheet" href="/parameter.css">
+    <script type = "text/javascript" src = "parameter.js" ></script>
+
 </head>
 <body>
 <div class="container">
     <div class="paramters_container">
-        <label>Force : </label>
-        <input type="number" id="strenght">
-        <input onclick="send_strength()" type="submit" value="envoyer">
+        <label id="strength_label" >Force : </label>
+        <input type="number" id="strength">
+        <input onclick="send_strength()" type="submit" value="envoyer" id="send">
     </div>
     <div class="button_container">
         <button onclick="control_valve()" name="controler">
@@ -26,35 +28,4 @@
     </div>
 </body>
 </html>
-
-<script>
-function go_back_home(){
-    document.location.href = "/index.html";
-}
-function send_strength(){
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", window.location.href, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = () => {
-    if(xhr.readyState === XMLHttpRequest.DONE){
-    }
-    }
-    var strength_value = document.getElementById("strenght").value;
-    xhr.send(JSON.stringify({
-    strength:strength_value
-    }));
-}
-function control_valve(){
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", window.location.href, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = () => {
-    if(xhr.readyState === XMLHttpRequest.DONE){
-    }
-    }
-    var strength_value = document.getElementById("strenght").value;
-    xhr.send(JSON.stringify({
-    valve:'switch'
-    }));
-}
-</script>
+<script>get_strength();</script>

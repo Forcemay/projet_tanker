@@ -54,14 +54,11 @@ body{
   display: inline-block;
   cursor: pointer;
 }
-.container button:hover, .container a.button:hover {
-  text-decoration: none;
-  background-color: white;
-  border-color: white;
-  cursor: pointer;
+#strength, #strength_label, #send{
+  font-size: 3em;
 }
-.container button:hover, .container a.button:hover {
-  color: red;
+#strength{
+  width: 3em;
 }
 @media screen and (orientation:portrait) {
 }

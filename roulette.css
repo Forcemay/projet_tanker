@@ -13,7 +13,7 @@ body{
     margin : 0;
 }
 
-#number{
+.container_question{
   text-align: center;
   width: 100%;
   position: absolute;
@@ -22,11 +22,11 @@ body{
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: black;
-  font-size: 30em;
+  font-size: 20em;
 
   }
-@media(max-width: 1300px) {
-  .number {
+@media(max-height: 440px) {
+  .container_question {
     font-size: 10em;
   }
 }

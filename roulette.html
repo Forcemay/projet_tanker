@@ -4,91 +4,26 @@
     <meta charset="utf-8" />
     <title>Page Title</title>
     <link rel="stylesheet" href="/roulette.css">
-        <script type = "text/javascript" src = "drink_button.js" ></script>
+    <script type = "text/javascript" src = "drink_button.js" ></script>
+    <script type = "text/javascript" src = "roulette.js" ></script>
 
 </head>
 <body>
 <div class="container">
-    <div id="number">5</div>
+    <div class="container_question">
+        <div id="number">5</div>
+    </div>
     <div class="drink_button">
             <button id="drink_button_object" onclick="send_drink()">DRINK</button>
     </div>
     <div id='homepage_logo'>
         <div>
-                <input  onclick ="go_back_home()" type="image" name="homepage" src="homepage_logo.png">
+            <input  onclick ="go_back_home()" type="image" name="homepage" src="homepage_logo.png">
         </div>
     </div>
 </div>
 
 </body>
 </html>
-
-<script>
-var random_number;
-
-
-function get_random_number() {
-    var numbers = [-2, -1,1,2];
-    var index = Math.floor(Math.random() * 3);
-    var number_to_plot = numbers[index]
-    return number_to_plot;
-}
-function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-   }
-async function change_value() {
-  for (let i = 0; i < 40; i++) {
-    random_number = get_random_number()
-    document.getElementById('number').innerHTML = random_number;
-    await sleep(100);
-  }
-  var color;
-  var string;
-  if (random_number == 0){
-    string = "Pas de perdant"
-    color = "orange";
-  }
-  if (random_number < 0){
-    string = "Vous distribuez : "+Math.abs(random_number)
-    color = "green";
-  }
-  if (random_number > 0){
-    string = "Vous buvez : "+Math.abs(random_number)
-    color = "red";
-  }
-  var number = document.getElementById('number');
-  var actual_font_size =window.getComputedStyle(number, null).getPropertyValue('font-size');
-  number.style.fontSize = Math.floor(parseInt(actual_font_size)/4) + 'px';
-  number.innerHTML = string
-
-  document.getElementsByClassName('container')[0].style.backgroundColor = color;
-
-}
-function send_drink(){
-    //document.getElementsByClassName('drink_button')[0].disabled = true;
-    drink_button_on();
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", window.location.href, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = () => {
-    if(xhr.readyState === XMLHttpRequest.DONE){
-        var number = document.getElementById('number');
-        var actual_font_size =window.getComputedStyle(number, null).getPropertyValue('font-size');
-        number.style.fontSize = Math.floor(parseInt(actual_font_size)*4) + 'px';
-        document.getElementsByClassName('container')[0].style.backgroundColor = "white";
-        change_value();
-        //document.getElementsByClassName('drink_button')[0].disabled = false;
-        drink_button_off();
-
-    }
-}
-    xhr.send(JSON.stringify({
-    drink: Math.abs(random_number)
-    }));
-}
-function go_back_home(){
-    document.location.href = "/index.html";
-}
-change_value()
-</script>
+<script>change_value();
+control_drink("inactive");</script>

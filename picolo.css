@@ -7,7 +7,32 @@
   height: 100vh;
   width: 100vw;
 }
+.drink_button_perso{
+  color : red;
+  display : inline-block;
+  top : 0%;
 
+
+}
+.pass_button_perso{
+  color : red;
+  display : inline-block;
+  top : 0%;
+}
+.container_button{
+
+position : absolute;
+top : 70%;
+width : 100%;
+text-align:center;
+overflow : hidden;
+}
+.drink_button_perso button{
+    width: 7em;
+}
+.pass_button_perso button{
+    width: 7em;
+}
 body{
     padding : 0;
     margin : 0;
@@ -31,6 +56,6 @@ body{
 }
 
 @media screen and (orientation:landscape) {
-  #question{font-size: 2em;}
+  #question{font-size: 3em;}
 }
 

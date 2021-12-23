@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <title>Page Title</title>
     <link rel="stylesheet" href="/shot.css">
-        <script type = "text/javascript" src = "drink_button.js" ></script>
+    <script type = "text/javascript" src = "drink_button.js" ></script>
+    <script type = "text/javascript" src = "shot.js" ></script>
 
 </head>
 <body>
@@ -22,24 +23,3 @@
 </div>
 </body>
 </html>
-
-<script>
-function go_back_home(){
-    document.location.href = "/index.html";
-}
-function send_drink(){
-    drink_button_on();
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", window.location.href, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = () => {
-    if(xhr.readyState === XMLHttpRequest.DONE){
-        drink_button_off();
-
-    }
-    }
-    xhr.send(JSON.stringify({
-    drink: 1
-    }));
-}
-</script>

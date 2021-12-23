@@ -22,6 +22,7 @@ class PUMP:
         self.time_bt = 3
 
     def run(self,value):
+        print(self.time_step)
         for i in range(value):
             start_time = time.time()
             self.control_gpio(True)
@@ -71,7 +72,13 @@ class Server(BaseHTTPRequestHandler):
     def empty_respond(self):
         f = "You are not the main user anymore"
         self.send_error(404, f)
-
+    def give_strength(self):
+        global pump
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        json_str = json.dumps({"strength_value": pump.time_step})
+        self.wfile.write(json_str.encode(encoding='utf_8'))
     def drink(self, value):
         global pump
         if not pump.gpio_state:
@@ -80,7 +87,7 @@ class Server(BaseHTTPRequestHandler):
 
     def do_GET(self):
         global user
-
+        print(self.path)
         if self.path == '/':
             user.ip = self.client_address[0]
             self.path = '/index.html'
@@ -119,15 +126,17 @@ class Server(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length).decode("utf-8")  # Get the data
         post_data = json.loads(post_data)
         print(post_data)
+        if "ask_strength" in post_data.keys() :
+            self.give_strength()
         if 'strength' in post_data.keys():
             try:
                 value = float(post_data["strength"])
                 print("new step time : ", value)
                 pump.time_step = value
-                self.empty_respond()
+                self.empty_json()
             except ValueError:
                 print("Not a float")
-                self.empty_respond()
+                self.empty_json()
         if 'valve' in post_data.keys():
             pump.control_gpio(not pump.gpio_state)
             self.empty_json()

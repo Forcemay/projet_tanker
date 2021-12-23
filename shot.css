@@ -23,9 +23,6 @@ body{
   transform: translateY(-50%);
   color: black;
   font-size: 8em;
-
-
-
   }
   
 @media screen and (orientation:portrait) {
