@@ -1,0 +1,26 @@
+#homepage_logo {
+    padding : 0;
+    margin : 0;
+  font-size: 10em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  width: 90%;
+  position: absolute;
+  top: 2%;
+  left: 1%;
+}
+#homepage_logo > div input {
+  height: 5em;
+}
+@media (max-width: 1300px) {
+  #homepage_logo {
+    position: absolute;
+  }
+  #homepage_logo > div input {
+    height:10em;
+  }
+}
+@media(min-width: 500px) {
+  #homepage_logo {
+    font-size: 3em;
+  }

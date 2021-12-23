@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" href="/picolo.css">
+    <script type = "text/javascript" src = "drink_button.js" ></script>
+
+</head>
+<body>
+<div class="container">
+    <div id="question">Question qui est pas mal non mais bhhhhhhhhhhhhhhhhh   c'est un pe ukkjkk vkukvjkjk j yujyèuyujyuyu uyuj uyuyu</div>
+    <div class="drink_button">
+            <button id="drink_button_object" onclick="send_drink()">DRINK</button>
+    </div>
+    <div id='homepage_logo'>
+        <div>
+                <input  onclick ="go_back_home()" type="image" name="homepage" src="homepage_logo.png">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+var questions = ["Time", "Money", "Work"];
+var size_array_questions = 3
+function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+   }
+async function end_game(){
+    document.getElementById('question').innerHTML = "La partie est finie";
+    await sleep(2000);
+    go_back_home();
+}
+function go_back_home(){
+    document.location.href = "/index.html";
+}
+function plot_question(){
+  var index = Math.floor(Math.random()*(questions.length));
+  var item = questions[index];
+  console.log(index);
+
+  if (item) {
+     document.getElementById('question').innerHTML = item ;
+     if (index > -1) {
+        questions.splice(index, 1);
+    }
+     }
+  else {
+   end_game();}
+}
+function send_drink(){
+    drink_button_on();
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", window.location.href, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = () => {
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        drink_button_off();
+        plot_question();
+    }
+    }
+    xhr.send(JSON.stringify({
+    drink: 1
+    }));
+}
+plot_question();
+</script>

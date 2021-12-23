@@ -1,0 +1,187 @@
+.floatleft {
+    float:left;
+    width: 25%;
+    height: 100%;
+}
+body{
+    padding : 0;
+    margin : 0;
+}
+.floatright {
+    float:right;
+    height: 100%;
+    width: 25%;
+}
+.floatcenter {
+    float:center;
+    height: 100%;
+    width: 25%;
+}
+
+.wrap {
+  padding : 0;
+  margin : 0;
+  border: 0px none;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media (min-width: 500px) {
+  .col-sm-6 {
+    width: 33.33%;
+  }
+}
+html, body {
+  height: 100%;
+  min-height: 18em;
+}
+.shotsize{
+  background-image: url("shot.jpg");
+
+}
+.frontend-side {
+  background-image: url("picolo.jpg");
+}
+
+.uiux-side {
+  background-image: url("roulette.png");
+}
+
+.split-pane {
+  padding-top: 1em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50%;
+  min-height: 9em;
+  font-size: 2em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+;
+}
+@media(min-width: 500px) {
+  .split-pane {
+    padding-top: 2em;
+    height: 100%;
+  }
+}
+button {
+    padding: 0px;
+    margin: 0px;
+    border: 0px none;
+}
+.split-pane > button {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+.split-pane > div .text-content {
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+.split-pane > div .text-content .big {
+  font-size: 2em;
+}
+.split-pane > button img {
+  height: 1.3em;
+}
+@media (max-width: 500px) {
+  .split-pane > button img {
+    display:none;
+  }
+}
+
+
+#shot {
+  font-size: 50em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-align :center;
+  position: absolute;
+  top: 2%;
+  left : 1%
+}
+#shot > div input {
+  height: 15em;
+}
+#shot > input{
+    pointer-events: all;
+}
+
+@media (max-width: 1300px) {
+  #shot {
+    position: absolute;
+  }
+  #shot > div input {
+    height:5em;
+  }
+}
+@media(min-width: 500px) {
+  #shot {
+    font-size: 3em;
+  }
+.big {
+  font-size: 2em;
+}
+
+#slogan {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  vertical-align: baseline;
+  top: 0.5em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4em;
+}
+@media(min-width: 500px) {
+  #slogan {
+    top: 5%;
+    font-size: 1.8em;
+  }
+}
+#slogan img {
+  height: 0.7$em;
+}
+.bold {
+  text-transform:uppercase;
+}
+.big {
+  font-weight:800;
+}
+#parameter {
+  font-size: 50em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-align :center;
+  position: absolute;
+  top: 2%;
+  right : 1%
+}
+#parameter > div input {
+  height: 15em;
+}
+#parameter > input{
+    pointer-events: all;
+}
+
+@media (max-width: 1300px) {
+  #parameter {
+    position: absolute;
+  }
+  #parameter > div input {
+    height:5em;
+  }
+}
+@media(min-width: 500px) {
+  #parameter {
+    font-size: 3em;
+  }
+.big {
+  font-size: 2em;
+}

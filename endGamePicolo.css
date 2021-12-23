@@ -1,0 +1,65 @@
+.wrap {
+  height: 100vh;
+  width: 100vw;
+}
+
+.floatleft {
+    float:left; 
+    width: 50%;
+    background-color: #ff0000;
+    height: 100%;
+}
+
+.floatright {
+float: right;
+    background-color: #00ff00;
+    height: 100%;
+    width: 50%;
+}
+
+.split-pane button, .split-pane a.button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:800;
+  background: none;
+  border: 1px solid white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 15em;
+  padding: 0.7em;
+  font-size: 0.5em;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+.split-pane button:hover, .split-pane a.button:hover {
+  text-decoration: none;
+  background-color: white;
+  border-color: white;
+  cursor: pointer;
+}
+.roulette-img.split-pane button:hover, .split-pane a.button:hover {
+  color: red;
+}
+.picolo-img.split-pane button:hover, .split-pane a.button:hover {
+  color: blue;
+}
+.split-pane > div .text-content {
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+.split-pane > div .text-content .big {
+  font-size: 2em;
+}
+.picolo-img {
+  background-image: url("photo.jpg");
+}
+
+.roulette-img {
+  background-image: url("roulette.png");
+}

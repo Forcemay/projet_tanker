@@ -1,0 +1,35 @@
+@import url("homepage_logo.css");
+@import url("drink_button.css");
+
+
+.container {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+body{
+    padding : 0;
+    margin : 0;
+}
+
+#number{
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: black;
+  font-size: 30em;
+
+  }
+@media(max-width: 1300px) {
+  .number {
+    font-size: 10em;
+  }
+}
+
+
+

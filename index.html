@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<div class="wrap">
+<button onclick ="go_roulette()" class='split-pane col-xs-12 col-sm-6 uiux-side floatleft' name="roulette">
+  <div>
+    <div class='text-content'>
+      <div class="bold">Roulette</div>
+      <div class='big'>Ready to bet?</div>
+    </div>
+  </div>
+</button>
+<button onclick ="go_shot()" class='split-pane col-xs-12 col-sm-6 shotsize floatright' name="shot">
+  <div>
+    <div class='text-content '>
+      <div class="bold">Shot</div>
+      <div class='big'>Stupidity</div>
+    </div>
+  </div>
+</button>
+<button onclick ="go_picolo()" class='split-pane col-xs-12 col-sm-6 frontend-side float_center' name="picolo">
+  <div>
+    <div class='text-content '>
+      <div class="bold">Picolo</div>
+      <div class='big'>Wanna play?</div>
+    </div>
+  </div>
+</button>
+<div id='parameter'>
+  <div>
+  <input onclick ="go_parameter()" type="image" name="parameter" src="parameter.png">
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+<script>
+function go_picolo(){
+    document.location.href = "/picolo.html";
+}
+function go_parameter(){
+    document.location.href = "/parameter.html";
+}
+function go_shot(){
+    document.location.href = "/shot.html";
+}
+function go_roulette(){
+    document.location.href = "/roulette.html";
+}
+</script>

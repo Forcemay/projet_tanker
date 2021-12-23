@@ -1,0 +1,36 @@
+@import url("homepage_logo.css");
+@import url("drink_button.css");
+
+
+.container {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+}
+
+body{
+    padding : 0;
+    margin : 0;
+}
+
+#question{
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: black;
+  font-size: 4em;
+
+
+
+  }
+@media screen and (orientation:portrait) {
+}
+
+@media screen and (orientation:landscape) {
+  #question{font-size: 2em;}
+}
+

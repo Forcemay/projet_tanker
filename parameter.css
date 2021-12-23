@@ -1,0 +1,75 @@
+@import url("homepage_logo.css");
+
+body{
+    padding : 0;
+    margin : 0;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color : #7B818E;
+
+}
+.container > .paramters_container {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-80%);
+  -ms-transform: translateY(-80%);
+  transform: translateY(-80%);
+}
+.container > .button_container {
+  font-size: 2em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 80%;
+  -webkit-transform: translateY(-80%);
+  -ms-transform: translateY(-80%);
+  transform: translateY(-80%);
+}
+
+.container button, .container a.button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:800;
+  background: none;
+  border: 1px solid white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 15em;
+  padding: 0.7em;
+  font-size: 2em;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+.container button:hover, .container a.button:hover {
+  text-decoration: none;
+  background-color: white;
+  border-color: white;
+  cursor: pointer;
+}
+.container button:hover, .container a.button:hover {
+  color: red;
+}
+@media screen and (orientation:portrait) {
+}
+
+@media screen and (orientation:landscape) {
+  .container > .button_container {
+  font-size: 1em;}
+}
+
+
+

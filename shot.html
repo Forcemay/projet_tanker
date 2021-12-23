@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" href="/shot.css">
+        <script type = "text/javascript" src = "drink_button.js" ></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="question">Wanna take a shot ?</div>
+    <div class="drink_button">
+            <button id="drink_button_object" onclick="send_drink()">DRINK</button>
+    </div>
+    <div id='homepage_logo'>
+        <div>
+                <input  onclick ="go_back_home()" type="image" name="homepage" src="homepage_logo.png">
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+function go_back_home(){
+    document.location.href = "/index.html";
+}
+function send_drink(){
+    drink_button_on();
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", window.location.href, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = () => {
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        drink_button_off();
+
+    }
+    }
+    xhr.send(JSON.stringify({
+    drink: 1
+    }));
+}
+</script>
