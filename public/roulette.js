@@ -50,13 +50,18 @@ function send_drink(){
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
+        var json_info = JSON.parse(xhr.response);
+        if (json_info['main']==0){
+            document.location.href = "/index.html";
+        }
+        else{
         var number = document.getElementById('number');
         var actual_font_size =window.getComputedStyle(number, null).getPropertyValue('font-size');
         number.style.fontSize = Math.floor(parseInt(actual_font_size)*4) + 'px';
         document.getElementsByClassName('container')[0].style.backgroundColor = "white";
         change_value();
         drink_button_off();
-        control_drink("inactive");
+        control_drink("inactive");}
     }
 }
     xhr.send(JSON.stringify({
@@ -67,5 +72,5 @@ function send_drink(){
 
 }
 function go_back_home(){
-    document.location.href = "/index.html";
+    document.location.href = "/homepage.html";
 }

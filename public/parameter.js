@@ -1,5 +1,5 @@
 function go_back_home(){
-    document.location.href = "/index.html";
+    document.location.href = "/homepage.html";
 }
 function send_strength(){
     var xhr = new XMLHttpRequest();
@@ -7,8 +7,13 @@ function send_strength(){
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
+        var json_info = JSON.parse(xhr.response);
+        if (json_info['main']==0){
+            document.location.href = "/index.html";
+        }
+        else {
         document.getElementById("strength").value = "";
-        get_strength();
+        get_strength();}
     }
     }
     var strength_value = document.getElementById("strength").value;
@@ -22,6 +27,10 @@ function control_valve(){
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
+        var json_info = JSON.parse(xhr.response);
+        if (json_info['main']==0){
+            document.location.href = "/index.html";
+        }
     }
     }
     var strength_value = document.getElementById("strength").value;
@@ -37,8 +46,12 @@ function get_strength(){
     xhr.onreadystatechange = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
         var json_info = JSON.parse(xhr.response);
+        if (json_info['main']==0){
+            document.location.href = "/index.html";
+        }
+        else{
         document.getElementById("strength_label").innerHTML = "Force ( "+json_info["strength_value"]+" s ) ";
-    }
+    }}
     }
     var strength_value = document.getElementById("strength").value;
     xhr.send(JSON.stringify({

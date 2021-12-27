@@ -1,5 +1,5 @@
 function go_back_home(){
-    document.location.href = "/index.html";
+    document.location.href = "/homepage.html";
 }
 function send_drink(){
     var xhr = new XMLHttpRequest();
@@ -7,7 +7,12 @@ function send_drink(){
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
-        drink_button_off();
+        var json_info = JSON.parse(xhr.response);
+        if (json_info['main']==0){
+            document.location.href = "/index.html";
+        }
+        else{
+        drink_button_off();}
 
     }
     }

@@ -18,12 +18,11 @@ async function end_game(){
     go_back_home();
 }
 function go_back_home(){
-    document.location.href = "/index.html";
+    document.location.href = "/homepage.html";
 }
 function plot_question(){
   var index = Math.floor(Math.random()*(questions.length));
   var item = questions[index];
-  console.log(index);
 
   if (item) {
      document.getElementById('question').innerHTML = item ;
@@ -40,7 +39,12 @@ function send_drink(){
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
-        drink_button_off();
+        var json_info = JSON.parse(xhr.response);
+        if (json_info['main']==0){
+            document.location.href = "/index.html";
+        }
+        else {
+        drink_button_off();}
 
     }
     }
