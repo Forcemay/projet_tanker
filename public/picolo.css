@@ -7,14 +7,14 @@
   height: 100vh;
   width: 100vw;
 }
-.drink_button_perso{
+.true{
   color : red;
   display : inline-block;
   top : 0%;
 
 
 }
-.pass_button_perso{
+.false{
   color : red;
   display : inline-block;
   top : 0%;
@@ -27,10 +27,10 @@ width : 100%;
 text-align:center;
 overflow : hidden;
 }
-.drink_button_perso button{
+.true button{
     width: 7em;
 }
-.pass_button_perso button{
+.false button{
     width: 7em;
 }
 body{
