@@ -1,18 +1,17 @@
 @import url("homepage_logo.css");
 @import url("drink_button.css");
-
-
+/* body */
+body{
+    padding : 0;
+    margin : 0;
+}
+/* upper container */
 .container {
   background-color: white;
   height: 100vh;
   width: 100vw;
 }
-
-body{
-    padding : 0;
-    margin : 0;
-}
-
+/* question text specification */
 .question{
   text-align: center;
   width: 100%;
@@ -24,10 +23,7 @@ body{
   color: black;
   font-size: 8em;
   }
-  
-@media screen and (orientation:portrait) {
-}
-
+/* resize */
 @media screen and (orientation:landscape) {
   .question{font-size: 4em;}
 }

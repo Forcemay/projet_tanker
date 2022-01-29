@@ -1,6 +1,6 @@
 @import url("homepage_logo.css");
 
-
+/* drink button specification*/
 .container > .drink_button {
   font-size: 1em;
   color: black;
@@ -13,7 +13,7 @@
   -ms-transform: translateY(-80%);
   transform: translateY(-80%);
 }
-
+/* other button types specification */
 .container button, .container a.button {
   font-family: 'Open Sans', sans-serif;
   font-weight:800;

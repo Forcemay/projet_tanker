@@ -1,3 +1,4 @@
+/* logo definition */
 #homepage_logo {
     padding : 0;
     margin : 0;
@@ -9,9 +10,11 @@
   top: 2%;
   left: 1%;
 }
+/* dev homepage_logo height (image) */
 #homepage_logo > div input {
   height: 5em;
 }
+/* resize */
 @media (max-width: 1300px) {
   #homepage_logo {
     position: absolute;

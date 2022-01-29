@@ -1,7 +1,8 @@
+// redirect
 function go_back_home(){
     document.location.href = "/homepage.html";
 }
-
+// login request
 function login(){
     var xhr = new XMLHttpRequest();
     xhr.open("POST", window.location.href, true);

@@ -1,43 +1,43 @@
 @import url("homepage_logo.css");
 @import url("drink_button.css");
-
-
+/* body */
+body{
+    padding : 0;
+    margin : 0;
+}
+/* upper container */
 .container {
   background-color: white;
   height: 100vh;
   width: 100vw;
 }
+/* container button */
+.container_button{
+  position : absolute;
+  top : 70%;
+  width : 100%;
+  text-align:center;
+  overflow : hidden;
+}
+/* true id button */
 .true{
   color : red;
   display : inline-block;
   top : 0%;
-
-
 }
+.true button{
+    width: 7em;
+}
+/* false id button */
 .false{
   color : red;
   display : inline-block;
   top : 0%;
 }
-.container_button{
-
-position : absolute;
-top : 70%;
-width : 100%;
-text-align:center;
-overflow : hidden;
-}
-.true button{
-    width: 7em;
-}
 .false button{
     width: 7em;
 }
-body{
-    padding : 0;
-    margin : 0;
-}
-
+/* question text format */
 #question{
   text-align: center;
   width: 100%;
@@ -47,14 +47,10 @@ body{
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: black;
-  font-size: 4em;
-
-
-
+  font-size: 4em;S
   }
-@media screen and (orientation:portrait) {
-}
 
+/* resize */
 @media screen and (orientation:landscape) {
   #question{font-size: 3em;}
 }
